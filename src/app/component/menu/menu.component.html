@@ -1,1 +1,7 @@
-<p>menu works!</p>
+<ul>
+    <li *ngFor="let menuItem of menuItems">
+        {{menuItem.description}}
+        <button (click)="selectMenuItem(menuItem.id)">></button>
+    </li>
+</ul>
+

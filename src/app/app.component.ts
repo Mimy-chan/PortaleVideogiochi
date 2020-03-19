@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'PortaleVideogiochi';
+  title = 'Games World';
+  currentSection:number=1;
 }
