@@ -1,8 +1,2 @@
-<app-menu (selectMenuId)="currentSection = $event"></app-menu>
-
-<div [ngSwitch]="currentSection">
-<app-home *ngSwitchCase="1"></app-home>
-<app-games-list *ngSwitchCase="2"></app-games-list>
-<app-game-detail *ngSwitchCase="3"></app-game-detail>
-<app-edit-game *ngSwitchCase="4"></app-edit-game>
-</div>
+<app-menu></app-menu>
+<router-outlet></router-outlet>

@@ -1,7 +1,6 @@
 <ul>
-    <li *ngFor="let menuItem of menuItems">
-        {{menuItem.description}}
-        <button (click)="selectMenuItem(menuItem.id)">></button>
-    </li>
+    <li routerLink="/home" routerLinkActivite="home">Home</li>
+    <li routerLink="/gamesList" routerLinkActivite="gamesList">Lista Videogiochi</li>
+    <li routerLink="/editGame" routerLinkActivite="editGame">Modifica un videogioco</li>
 </ul>
 
