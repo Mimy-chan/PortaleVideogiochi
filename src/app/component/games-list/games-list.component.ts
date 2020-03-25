@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GameItem } from 'src/app/interface/game-item.interface';
 import { GameListService } from 'src/app/service/game-list.service';
+import { Genere, genereListDB } from 'src/app/interface/genere';
 
 
 @Component({
@@ -20,4 +21,5 @@ export class GamesListComponent implements OnInit {
 
   gameList:GameItem[];
 
+  genereList:Genere[]=genereListDB;
 }
