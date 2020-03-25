@@ -9,13 +9,14 @@ import { GamesListComponent } from './component/games-list/games-list.component'
 import { GameDetailComponent } from './component/game-detail/game-detail.component';
 import { EditGameComponent } from './component/edit-game/edit-game.component';
 import { LoginComponent } from './component/login/login.component';
+import { LoginGuardService } from './service/login-guard.service';
 
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'gamesList', component: GamesListComponent },
-  { path: 'editGame', component: EditGameComponent },
-  { path: 'gameDetail', component: GameDetailComponent },
+  { path: 'home', component: HomeComponent , canActivate: [LoginGuardService]},
+  { path: 'gamesList', component: GamesListComponent ,canActivate: [LoginGuardService]},
+  { path: 'editGame', component: EditGameComponent,canActivate: [LoginGuardService] },
+  { path: 'gameDetail', component: GameDetailComponent,canActivate: [LoginGuardService] },
   { path: 'login', component: LoginComponent },
 ];
 

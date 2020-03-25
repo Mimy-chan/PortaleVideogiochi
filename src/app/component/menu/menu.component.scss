@@ -2,10 +2,13 @@
     font: bold;
     font-size: 22px;
 }
-.menuDiv{
-    width: 50px;
-    height: 50px;
-    background-color:  violet;
-    grid-area: head;
-      
+.menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
 }
+  .button{
+      background-color: transparent;
+  }

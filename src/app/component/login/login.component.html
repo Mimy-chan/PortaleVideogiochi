@@ -1,8 +1,11 @@
 <div>
 
-
-    <p>Username</p>
-    <input placeholder="Inserisci l'username">
+    <p class="text">Username</p>
+    <input [(ngModel)]="username" placeholder="Inserisci l'username">
+</div>
+<div>
     <p>Password</p>
-    <input (keyup.enter)="login()"[(ngModel)]="password" placeholder="Inserisci la password">
-  </div> 
+    <input (keyup.enter)="login()" [(ngModel)]="password" placeholder="Inserisci la password">
+  </div>
+
+ 
