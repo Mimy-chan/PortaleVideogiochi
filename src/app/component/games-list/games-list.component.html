@@ -1,7 +1,12 @@
-<p>Lista di Videogiochi</p>
-<select>
-    <option [value]="genere.id" *ngFor="let genere of genereList">{{genere.description}}</option>
-</select>
-<ul>
-    <li *ngFor='let game of gameList'>{{game.name}}</li>
-</ul>
+<div>
+    <p>Lista di Videogiochi</p>
+    <select (change)="selectChange($event.target.value)">
+        <option [value]="genere.id" *ngFor="let genere of genereList">{{genere.description}}</option>
+    </select>
+
+    <div *ngFor='let game of gameList'>
+        <ul>
+            <li *ngIf="game.genereId === genereSelezionato">{{game.name}}</li>
+        </ul>
+    </div>
+</div>

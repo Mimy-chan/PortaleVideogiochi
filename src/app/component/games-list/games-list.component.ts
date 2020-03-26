@@ -10,16 +10,17 @@ import { Genere, genereListDB } from 'src/app/interface/genere';
   styleUrls: ['./games-list.component.scss']
 })
 export class GamesListComponent implements OnInit {
+  gameList: GameItem[];
 
+  genereList: Genere[] = genereListDB;
+  genereSelezionato: number;
 
-  constructor(private gameListService:GameListService) { 
-    this.gameList=this.gameListService.gameList
+  constructor(private gameListService: GameListService) {
+    this.gameList = this.gameListService.gameList
   }
-
   ngOnInit(): void {
   }
-
-  gameList:GameItem[];
-
-  genereList:Genere[]=genereListDB;
+  selectChange(value) {
+    this.genereSelezionato = Number(value)
+  }
 }
