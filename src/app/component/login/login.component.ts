@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   }
   username: string;
   password: string;
-
+  admin:string;
 
 login(){
   if(this.username != null && this.username != '' && this.password != null && this.password != ''){
@@ -23,7 +23,12 @@ login(){
     
     
   }
-
+}
+loginAdmin(){
+  if(this.admin != null && this.admin != this.username && this.admin != this.password){
+    sessionStorage.setItem('user',this.admin);
+    this.router.navigateByUrl('/editGame');
+  }
 }
 }
 
