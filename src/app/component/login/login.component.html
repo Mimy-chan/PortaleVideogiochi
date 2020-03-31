@@ -1,20 +1,26 @@
 <form (ngSubmit)="login()">
 
-    <div class="form-group" >
-        <p class="text" >Username</p>
-        <input name="username" required [(ngModel)]="username" placeholder="Inserisci l'username"  #usernameControl="ngModel">
-        <span *ngIf="usernameControl.invalid && usernameControl.dirty"> L'inserimento dell'username è obbligatorio</span>
+    <div class="form-group">
+        <p class="text">Username</p>
+        <input name="username" required [(ngModel)]="username" placeholder="Inserisci l'username"
+            #usernameControl="ngModel">
+        <span *ngIf="usernameControl.invalid && usernameControl.dirty"> L'inserimento dell'username è
+            obbligatorio</span>
 
     </div>
 
     <div>
         <p>Password</p>
-        <input type="password" name="password" (keyup.enter)="login()" [(ngModel)]="password" placeholder="Inserisci la password">
+        <input type="password" name="password" (keyup.enter)="login()" [(ngModel)]="password"
+            placeholder="Inserisci la password">
     </div>
 
     <div>
         <button type="submit">Submit</button>
     </div>
 
-</form>
 
+</form>
+<div>
+    <button (click)="login()">Login Admin</button>
+</div>

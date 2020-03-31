@@ -10,12 +10,14 @@ import { GameDetailComponent } from './component/game-detail/game-detail.compone
 import { EditGameComponent } from './component/edit-game/edit-game.component';
 import { LoginComponent } from './component/login/login.component';
 import { LoginGuardService } from './service/login-guard.service';
+import { LoginAdminGuardService } from './service/login-admin-guard.service';
 
 
 const appRoutes: Routes = [
+  
   { path: 'home', component: HomeComponent , canActivate: [LoginGuardService]},
   { path: 'gamesList', component: GamesListComponent ,canActivate: [LoginGuardService]},
-  { path: 'editGame', component: EditGameComponent,canActivate: [LoginGuardService] },
+  { path: 'editGame', component: EditGameComponent,canActivate: [LoginAdminGuardService] },
   { path: 'gameDetail', component: GameDetailComponent,canActivate: [LoginGuardService] },
   { path: 'login', component: LoginComponent },
 ];
