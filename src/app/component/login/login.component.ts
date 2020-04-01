@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -7,23 +9,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  loginForm: FormGroup;
 
-  constructor(private router:Router) { }
+
+  constructor(private router: Router, private fb: FormBuilder) {
+    this.createLogin();
+  }
+  createLogin() {
+    this.loginForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    })
+  };
 
   ngOnInit(): void {
   }
-  username: string;
-  password: string;
 
-login(){
-  if(this.username != null && this.username != '' && this.password != null && this.password != ''){
-    const isAdmin = this.username === 'admin';
-    sessionStorage.setItem(isAdmin ? 'admin' : 'user',this.username);
-  this.router.navigateByUrl('/home'); 
+  login() {
+    if (this.loginForm.get('username').value != null && this.loginForm.get('username').value !== '' && this.loginForm.get('password').value != null && this.loginForm.get('password').value !== '') {
+      const isAdmin = this.loginForm.get('username').value === ('admin');
+      sessionStorage.setItem(isAdmin ? 'admin' : 'user', this.loginForm.get('username').value);
+      this.router.navigateByUrl('/home');
+    }
   }
-
-
-}   
+  
 }
 
 
