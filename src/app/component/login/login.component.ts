@@ -17,13 +17,14 @@ export class LoginComponent implements OnInit {
 
 login(){
   if(this.username != null && this.username != '' && this.password != null && this.password != ''){
-    sessionStorage.setItem('user',this.username);
+    const isAdmin = this.username === 'admin';
+    sessionStorage.setItem(isAdmin ? 'admin' : 'user',this.username);
   this.router.navigateByUrl('/home'); 
-  }else if(this.username != null && this.username === sessionStorage.getItem('admin')) {
-    sessionStorage.setItem('admin', this.username);
-    this.router.navigateByUrl('/editGame');
   }
+
+
+}   
 }
 
-}
+
 
