@@ -18,9 +18,16 @@ export class LoginComponent implements OnInit {
   createLogin() {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
     })
   };
+
+  get usernameControl(): FormControl {
+    return this.loginForm.get('username') as FormControl;
+  }
+  get passwordControl(): FormControl {
+    return this.loginForm.get('password') as FormControl;
+  }
 
   ngOnInit(): void {
   }
@@ -32,7 +39,7 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('/home');
     }
   }
-  
+
 }
 
 

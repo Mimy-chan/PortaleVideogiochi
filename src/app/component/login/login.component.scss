@@ -1,3 +1,17 @@
-.text{
-    font-size: 20px;
+span{
+    color: red;
 }
+label { 
+   display: flex; 
+    line-height: 30px; 
+    width: 150px; 
+    }
+    input{ 
+        border: 1px solid #323232; /* Bordo */
+        color: #000; /* Colore del testo */
+        height: 30px; /* Altezza */
+        line-height: 30px; /* Altezza di riga */
+        width: 150px; /* Larghezza */
+        padding: 0 10px; /* Padding */
+        padding-left: 30px;
+        }
