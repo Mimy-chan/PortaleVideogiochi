@@ -21,7 +21,7 @@ login(){
     sessionStorage.setItem(isAdmin ? 'admin' : 'user',this.username);
   this.router.navigateByUrl('/home'); 
   }
-
+//prova di merge
 
 }   
 }
