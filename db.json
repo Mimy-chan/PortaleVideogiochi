@@ -1,0 +1,16 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "nome": "Jump Force",
+      "genere": "picchiaduro"
+    },
+    
+    {
+      "id": 2,
+      "nome": "Fifa",
+      "genere": "calcio"
+    }
+  ]
+  
+}
