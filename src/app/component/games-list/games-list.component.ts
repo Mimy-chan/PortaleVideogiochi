@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GameItem } from 'src/app/interface/game-item.interface';
 import { GameListService } from 'src/app/service/game-list.service';
 import { Genere, genereListDB } from 'src/app/interface/genere';
+import { MyHttpService } from 'src/app/service/my-http.service';
 
 
 @Component({
@@ -15,12 +16,11 @@ export class GamesListComponent implements OnInit {
   genereList: Genere[] = genereListDB;
   genereSelezionato: number;
 
-  constructor(private gameListService: GameListService) {
-    this.gameList = this.gameListService.gameList
-  }
+  constructor(private myHttp:MyHttpService) {}
   ngOnInit(): void {
+    this.myHttp.getGames().subscribe(value=>{
+     this.gameList=value;
+    })
   }
-  selectChange(value) {
-    this.genereSelezionato = Number(value)
-  }
+  
 }

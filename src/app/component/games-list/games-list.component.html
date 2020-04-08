@@ -1,5 +1,5 @@
 <div>
-    <p>Lista di Videogiochi</p>
+  <!--  <p>Lista di Videogiochi</p>
     <select (change)="selectChange($event.target.value)">
         <option [value]="genere.id" *ngFor="let genere of genereList">{{genere.description}}</option>
     </select>
@@ -8,5 +8,6 @@
         <ul>
             <li *ngIf="game.genereId === genereSelezionato">{{game.name}}</li>
         </ul>
-    </div>
+    </div>-->
+    <p *ngFor='let game of gameList'>{{game.nome}}</p>
 </div>
